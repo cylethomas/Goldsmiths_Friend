@@ -1,0 +1,1018 @@
+﻿<Page x:Class="GoldsmithsFriend_v01.CustomerInput"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GoldsmithsFriend_v01"
+      xmlns:viewmodel="clr-namespace:GoldsmithsFriend_v01.ViewModel"
+      xmlns:viewmodel2="clr-namespace:GoldsmithsFriend_v01.Model"
+      xmlns:viewmodel3="clr-namespace:GoldsmithsFriend_v01"
+      mc:Ignorable="d" 
+      d:DesignHeight="3100" d:DesignWidth="900"
+      Title="CustomerInput">
+
+    <Page.Resources>
+        <viewmodel:MetalTypeViewModel x:Key="vm"></viewmodel:MetalTypeViewModel>
+        <viewmodel2:MetalTypes x:Key="vmt"></viewmodel2:MetalTypes>
+        <viewmodel3:Project x:Key="vmp"></viewmodel3:Project>
+    </Page.Resources>
+
+
+    <ScrollViewer Grid.Row="1">
+        <Grid Background="white">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="135" ></RowDefinition>
+                <RowDefinition Height="215"></RowDefinition>
+
+                <RowDefinition Height="40"></RowDefinition>
+
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+                <!-- Here we start the metal colums 
+                100 px seems to do the trick-->
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+
+                <!-- Gemstones -->
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+                <!-- misc items -->
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+                <!-- Labor -->
+
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+                <!-- Shipping and total -->
+                <RowDefinition Height="100"></RowDefinition>
+
+                <!-- HR -->
+                <RowDefinition Height="40"></RowDefinition>
+
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="420"></ColumnDefinition>
+                <ColumnDefinition Width="420"></ColumnDefinition>
+                <ColumnDefinition Width="420"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Customer Row -->
+
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+                <Label Margin="45,50,0,1" Content="Customer" FontSize="20" />
+                <TextBox Name="firstNameText" Height="30" Margin="45,0,440,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding Path=FirstName, Mode=OneTime}"/>
+                <Label Margin="45,-5,0,0" Content="first name"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1">
+                <TextBox Name="lastNameText" Height="30" Margin="1,88,70,1" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding Path=LirstName, Mode=OneTime}" />
+
+                <TextBlock Height="30" Margin="1,-90,70,1"  FontSize="17" />
+
+
+                <Label  Content="last name" Margin="0,-5,0,0" />
+            </StackPanel>
+
+            <!-- Phone -->
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+
+                <TextBox Name="phoneText" Height="30" Margin="45,5,440,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,-5,0,0" Content="phone # "/>
+
+                <Label Margin="45,5,0,1" Content="Address" FontSize="20" />
+                <TextBox Name="streetText" Height="30" Margin="45,0,440,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,-5,0,0" Content="street"/>
+
+                <TextBox Name="cityText" Height="30" Margin="45,5,440,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,-5,0,0" Content="city"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                <TextBox Name="emailText" Height="30" Margin="1,5,70,1" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label  Content="email" Margin="0,-5,0,0" />
+
+                <TextBox Name="unitText" Height="30" Margin="3,42,70,0" VerticalContentAlignment="Bottom" FontSize="17" RenderTransformOrigin="0.5,0.5" />
+                <Label Margin="1,-5,0,0" Content="p.o box / unit #"/>
+                <TextBox Name="stateText" Height="30" Margin="3,5,175,0" VerticalContentAlignment="Bottom" FontSize="17" RenderTransformOrigin="0.5,0.5" />
+                <Label Margin="1,-5,0,0" Content="state/ province"/>
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
+                <TextBox Name="zipCodeText" Height="30" Margin="255,154,70,0" VerticalContentAlignment="Bottom" FontSize="17" RenderTransformOrigin="0.5,0.5" />
+                <Label Margin="255,-5,0,0" Content="zip code"/>
+            </StackPanel>
+
+            <!-- HR -->
+
+            <Separator Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Project Name" FontSize="20" />
+                <TextBox Name="textBoxProjectName" Height="30" Margin="45,0,70,0" VerticalContentAlignment="Bottom" FontSize="17" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Project Type : " FontSize="20" />
+                <ComboBox Name="comboBoxProjectType" Height="30" Margin="45,0,485,0" SelectionChanged="ComboBox_SelectionChanged" >
+                    <ComboBoxItem>Ring</ComboBoxItem>
+                    <ComboBoxItem>Necklace</ComboBoxItem>
+                    <ComboBoxItem>Pendant</ComboBoxItem>
+                    <ComboBoxItem>Cuff</ComboBoxItem>
+                    <ComboBoxItem>Bangle</ComboBoxItem>
+                    <ComboBoxItem>Earrings</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" Grid.Column="1">
+                <Label Margin="-30,5,0,1" Content="Project Approach : " FontSize="20" />
+                <ComboBox Name="comboBoxProjectApproach" Height="30" Margin="-34,0,69,0" >
+                    <ComboBoxItem>Fabrication</ComboBoxItem>
+                    <ComboBoxItem>Hand Carved Wax</ComboBoxItem>
+                    <ComboBoxItem>CAD</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <Separator Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+
+
+            <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+                <Label Margin="45,5,0,1" Content="Metal #1 :" FontSize="20" />
+                <ComboBox x:Name="mtcb1"   Height="30" Margin="45,0,485,0" ItemsSource="{Binding Path=MetalTypes}" SelectedItem="{Binding Path=SMetalTypes}" DisplayMemberPath="Name" />
+
+                <Label Content="metal type" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+                <TextBox Name="TextBoxPpg1" Height="30" Margin="-35,43,355,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding ElementName=mtcb1, Path=SelectedItem.MetalType}" HorizontalAlignment="Right" Width="100" />
+                <Label Margin="-35,5,0,1" Content="Price Per Gram:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+
+                <TextBox Height="30" Margin="80,43,270,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding Path=Grams, Mode=TwoWay}">
+                </TextBox>
+                <Label Margin="80,5,160,1" Content="Grams:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+
+                <TextBox Height="30" Margin="165,43,180,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding Path=Markup, Mode=TwoWay}">
+                </TextBox>
+                <Label Margin="165,5,160,1" Content="Markup:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+
+                <TextBox Height="30" Margin="255,43,70,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding Path=Total, Mode=OneWay}" TextChanged="TextBox_TextChanged" >
+                </TextBox>
+                <Label Margin="255,5,0,1" Content="Total :" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+                <Label Margin="45,5,0,1" Content="Metal #2 :" FontSize="20" />
+                <ComboBox x:Name="mtcb2"   Height="30" Margin="45,0,485,0" ItemsSource="{Binding Path=MetalTypes}" SelectedItem="{Binding Path=SMetalTypes}" DisplayMemberPath="Name" />
+
+                <Label Content="metal type" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="-35,43,355,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding ElementName=mtcb2,Path=SelectedItem.MetalType}" HorizontalAlignment="Right" Width="100" />
+
+                <Label Margin="-35,5,0,1" Content="Price Per Gram:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="80,43,270,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="80,5,160,1" Content="Grams:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="165,43,180,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="165,5,160,1" Content="Markup:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="7" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="255,43,70,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="255,5,0,1" Content="Total :" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+                <Label Margin="45,5,0,1" Content="Metal #3 :" FontSize="20" />
+                <ComboBox x:Name="mtcb3"   Height="30" Margin="45,0,485,0" ItemsSource="{Binding Path=MetalTypes}" SelectedItem="{Binding Path=SMetalTypes}" DisplayMemberPath="Name" />
+                <Label Content="metal type" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="-35,43,355,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding ElementName=mtcb3,Path=SelectedItem.MetalType}" HorizontalAlignment="Right" Width="100" />
+
+                <Label Margin="-35,5,0,1" Content="Price Per Gram:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="80,43,270,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="80,5,160,1" Content="Grams:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="165,43,180,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="165,5,160,1" Content="Markup:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="8" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="255,43,70,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="255,5,0,1" Content="Total :" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" DataContext="{Binding Source={StaticResource vm}}">
+                <Label Margin="45,5,0,1" Content="Metal #4 :" FontSize="20" />
+                <ComboBox x:Name="mtcb4"   Height="30" Margin="45,0,485,0" ItemsSource="{Binding Path=MetalTypes}" SelectedItem="{Binding Path=SMetalTypes}" DisplayMemberPath="Name" />
+                <Label Content="metal type" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="-35,43,355,0" VerticalContentAlignment="Bottom" FontSize="17" Text="{Binding ElementName=mtcb4,Path=SelectedItem.MetalType}" HorizontalAlignment="Right" Width="100" />
+
+                <Label Margin="-35,5,0,1" Content="Price Per Gram:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="80,43,270,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="80,5,160,1" Content="Grams:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="165,43,180,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="165,5,160,1" Content="Markup:"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="9" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBox Height="30" Margin="255,43,70,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label Margin="255,5,0,1" Content="Total :" />
+            </StackPanel>
+
+
+            <Separator Grid.Row="10" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+
+            <StackPanel Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Gemstone(s) #1 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="gemstone details" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="11" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,185,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="treatments" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="11" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="size in (mm)" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="12" Grid.Column="0">
+                <TextBox Height="30" Margin="45,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,0,265,1" Content="country of oragin" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="12" Grid.Column="0">
+                <TextBox Height="30" Margin="250,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="250,0,65,1" Content="carat" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="12" Grid.Column="0">
+                <TextBox Height="30" Margin="385,15,-70,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="385,0,-70,1" Content="whosale cost" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="12" Grid.Column="1">
+                <TextBox Height="30" Margin="80,15,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="12" Grid.Column="1">
+                <TextBox Height="30" Margin="150,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="150,0,225,1" Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="12" Grid.Column="1">
+                <TextBox Height="30" Margin="260,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="260,0,0,1" Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Gemstone(s) #2 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="gemstone details" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="13" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,185,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="treatments" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="13" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="size in (mm)" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="14" Grid.Column="0">
+                <TextBox Height="30" Margin="45,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,0,265,1" Content="country of oragin" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="14" Grid.Column="0">
+                <TextBox Height="30" Margin="250,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="250,0,65,1" Content="carat" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="14" Grid.Column="0">
+                <TextBox Height="30" Margin="385,15,-70,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="385,0,-70,1" Content="whosale cost" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="14" Grid.Column="1">
+                <TextBox Height="30" Margin="80,15,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="14" Grid.Column="1">
+                <TextBox Height="30" Margin="150,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="150,0,225,1" Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="14" Grid.Column="1">
+                <TextBox Height="30" Margin="260,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="260,0,0,1" Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Gemstone(s) #3 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="gemstone details" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="15" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,185,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="treatments" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="15" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="size in (mm)" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="16" Grid.Column="0">
+                <TextBox Height="30" Margin="45,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,0,265,1" Content="country of oragin" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="16" Grid.Column="0">
+                <TextBox Height="30" Margin="250,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="250,0,65,1" Content="carat" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="16" Grid.Column="0">
+                <TextBox Height="30" Margin="385,15,-70,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="385,0,-70,1" Content="whosale cost" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="16" Grid.Column="1">
+                <TextBox Height="30" Margin="80,15,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="16" Grid.Column="1">
+                <TextBox Height="30" Margin="150,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="150,0,225,1" Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="16" Grid.Column="1">
+                <TextBox Height="30" Margin="260,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="260,0,0,1" Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Gemstone(s) #4 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="gemstone details" Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="17" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,185,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="treatments" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="17" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="size in (mm)" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="18" Grid.Column="0">
+                <TextBox Height="30" Margin="45,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="45,0,265,1" Content="country of oragin" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="18" Grid.Column="0">
+                <TextBox Height="30" Margin="250,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="250,0,65,1" Content="carat" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="18" Grid.Column="0">
+                <TextBox Height="30" Margin="385,15,-70,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="385,0,-70,1" Content="whosale cost" ToolTip="Wholesale cost."/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="18" Grid.Column="1">
+                <TextBox Height="30" Margin="80,15,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="18" Grid.Column="1">
+                <TextBox Height="30" Margin="150,15,185,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="150,0,225,1" Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="18" Grid.Column="1">
+                <TextBox Height="30" Margin="260,15,65,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="260,0,0,1" Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+
+            <!-- HR -->
+            <Separator Grid.Row="19" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+
+            <StackPanel Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Misc Materials #1 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : chains, findings, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="20" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,350,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="wholesale cost" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="20" Grid.Column="1">
+                <TextBox Height="30" Margin="80,43,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="20" Grid.Column="1">
+                <TextBox Height="30" Margin="150,43,185,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="150,0,210,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="20" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Misc Materials #2 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : chains, findings, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="21" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,350,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="wholesale cost" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="21" Grid.Column="1">
+                <TextBox Height="30" Margin="80,43,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="21" Grid.Column="1">
+                <TextBox Height="30" Margin="150,43,185,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="150,0,210,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="21" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="22" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Misc Materials #3 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : chains, findings, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="22" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,350,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="wholesale cost" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="22" Grid.Column="1">
+                <TextBox Height="30" Margin="80,43,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="22" Grid.Column="1">
+                <TextBox Height="32" Margin="150,43,185,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="150,0,210,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="22" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="23" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Misc Materials #1 :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : chains, findings, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="23" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,350,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="wholesale cost" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="23" Grid.Column="1">
+                <TextBox Height="30" Margin="80,43,280,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="80,0,270,1" Content="markup" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="23" Grid.Column="1">
+                <TextBox Height="30" Margin="150,43,185,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="150,0,210,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="23" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+            <!-- HR -->
+            <Separator Grid.Row="24" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+
+            <StackPanel Grid.Row="25" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Labor / Services :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : stonesetting, fabrication, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="25" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,310,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="company" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="25" Grid.Column="1">
+                <TextBox Height="30" Margin="120,43,245,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="120,0,245,1" Content="rate" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="25" Grid.Column="1">
+                <TextBox Height="30" Margin="185,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="185,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="25" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="26" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Labor / Services :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : stonesetting, fabrication, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="26" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,310,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="company" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="26" Grid.Column="1">
+                <TextBox Height="30" Margin="120,43,245,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="120,0,245,1" Content="rate" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="26" Grid.Column="1">
+                <TextBox Height="30" Margin="185,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="185,0,175,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="26" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="27" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Labor / Services :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : stonesetting, fabrication, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="27" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,310,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="company" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="27" Grid.Column="1">
+                <TextBox Height="30" Margin="120,43,245,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="120,0,245,1" Content="rate" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="27" Grid.Column="1">
+                <TextBox Height="30" Margin="185,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="185,0,175,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="27" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="28" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Labor / Services :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="details : stonesetting, fabrication, etc. " Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="28" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,310,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="company" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="28" Grid.Column="1">
+                <TextBox Height="30" Margin="120,43,245,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="120,0,245,1" Content="rate" ToolTip="Please enter quantity of stones, or leave the field blank." />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="28" Grid.Column="1">
+                <TextBox Height="30" Margin="185,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="qty." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="185,0,175,0" />
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="28" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+            <!-- HR -->
+            <Separator Grid.Row="29" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+            <StackPanel Grid.Row="30" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Shipping :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,485,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="shipping service : usps, fed-ex, ect." Margin="45,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="30" Grid.Column="1">
+                <TextBox Height="30" Margin="-35,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="shipping method : two day, overnight, ect." ToolTip="Please enter quantity of stones, or leave the field blank." Margin="-35,0,0,0" />
+
+            </StackPanel>
+
+
+
+
+
+            <StackPanel Grid.Row="30" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+            <!-- HR -->
+            <Separator Grid.Row="31" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="725" Margin="0,5,70,5"/>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="45,0,725,0" VerticalContentAlignment="Bottom" FontSize="17"/>
+                <Label Content="metals total" Margin="50,0,0,0" />
+
+                <Label Content="tax %" Margin="440,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="505,0,250,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="sub total" Margin="505,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="440,0,345,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="tax %" Margin="440,0,0,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="130,0,638,0" VerticalContentAlignment="Bottom" FontSize="17"/>
+                <Label Content="gems total" Margin="130,0,615,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="220,0,552,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="total labor" Margin="220,0,515,0" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="32" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Totals :" FontSize="20" />
+                <TextBox Height="30" Margin="305,0,475,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Content="total misc." Margin="305,0,475,0" />
+            </StackPanel>
+
+
+
+            <StackPanel Grid.Row="32" Grid.Column="1">
+                <TextBox Height="30" Margin="180,43,175,0" VerticalContentAlignment="Bottom" FontSize="17"  >
+                </TextBox>
+                <Label  Content="tax" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="180,0,0,0" />
+
+            </StackPanel>
+
+
+
+
+
+            <StackPanel Grid.Row="32" Grid.Column="1">
+                <TextBox Height="30" Margin="255,43,65,0" VerticalContentAlignment="Bottom" FontSize="17" >
+                </TextBox>
+                <Label  Content="total" ToolTip="Please enter quantity of stones, or leave the field blank." Margin="255,0,70,0" RenderTransformOrigin="0.5,0.5" >
+
+                </Label>
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="33" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,0,1" Content="Notes :" FontSize="20" />
+                <RichTextBox Margin="45,0,65,0" Height="82"></RichTextBox>
+
+
+            </StackPanel>
+
+            <!-- Move the submit button to bottom later -->
+            <Button Content="Submit" Grid.Column="1" HorizontalAlignment="Left" Margin="60,25,0,0" VerticalAlignment="Top" Width="95" Height="35" Click="addNewCustomerButton_Click"/>
+
+
+
+
+
+
+
+
+
+
+
+            <!--
+            <StackPanel Grid.Row="18" Grid.ColumnSpan="2">
+                <Label Margin="45,10,655,1" Content="Labor Costs" FontSize="20" Height="33" />
+                <TextBox Height="30" Margin="45,0,655,0" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label Margin="46,-5,655,0" Content="shop labor"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="1">
+                <TextBox Height="33" Margin="220,43,65,1" VerticalContentAlignment="Bottom" FontSize="17" />
+                <Label  Content="rate" Margin="220,-5,65,0" />
+            </StackPanel>
+            
+             <StackPanel Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Margin="45,5,655,1" Content="Markup:" FontSize="20" />
+                <ComboBox Height="30" Margin="45,0,655,0">
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>2.25</ComboBoxItem>
+                    <ComboBoxItem>2.5</ComboBoxItem>
+                    <ComboBoxItem>2.75</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+
+                </ComboBox>
+            </StackPanel>
+            -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>
+    
